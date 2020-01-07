@@ -18,8 +18,15 @@ provider "aws" {
   shared_credentials_file = "~/.aws/credentials"
 }
 provider "cloudflare" {
-  email = "tech@moderngreek.us"
+  email = "${var.cloudflare_email}"
   token = "${var.cloudflare_token}"
+}
+variable "cloudflare_email" {
+  type = "string"
+  default= "tech@moderngreek.us"
+}
+variable "cloudflare_token" {
+  type = "string"
 }
 variable "aws_access_key" {
   type = "string"
