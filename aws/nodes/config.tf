@@ -17,6 +17,10 @@ provider "aws" {
   region = "${var.region}"
   shared_credentials_file = "~/.aws/credentials"
 }
+provider "cloudflare" {
+  email = "tech@moderngreek.us"
+  token = "${var.cloudflare_token}"
+}
 variable "aws_access_key" {
   type = "string"
 }
